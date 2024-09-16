@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'ngx-toastr/toastr';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Assistant', sans-serif;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border: rem-calc(4) solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: rem-calc(9999);
+}
+
+::-webkit-scrollbar {
+  width: 0.875rem;
+}

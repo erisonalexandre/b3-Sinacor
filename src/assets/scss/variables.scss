@@ -1,0 +1,65 @@
+@use 'sass:math';
+
+$breakpoints: (
+  'mobile': (
+    min-width: 425px,
+  ),
+  'tablet': (
+    min-width: 692px,
+  ),
+  'desktop': (
+    min-width: 1024px,
+  ),
+  'large-desktop': (
+    min-width: 1200px,
+  ),
+);
+
+@mixin respond-to($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  } @else {
+    @error '@mixin respond-to: `#{$name}` is not a key in breakpoints.' +
+    ' Available breakpoints are: `#{$breakpoints}`';
+  }
+}
+
+$rem-base: 16px !default;
+
+// STRIP UNIT
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return math.div($num, ($num * 0 + 1));
+}
+
+// CONVERT TO REM
+@function convert-to-rem($value, $base-value: $rem-base) {
+  $value: math.div(strip-unit($value), strip-unit($base-value)) * 1rem;
+  @if ($value == 0rem) {
+    $value: 0;
+  } // Turn 0rem into 0
+  @return $value;
+}
+
+@function rem-calc($values, $base-value: $rem-base) {
+  $max: length($values);
+
+  @if $max == 1 {
+    @return convert-to-rem(nth($values, 1), $base-value);
+  }
+
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append(
+      $remValues,
+      convert-to-rem(nth($values, $i), $base-value)
+    );
+  }
+  @return $remValues;
+}
+
+$primary-color: #3f51b5;
+$text-color: #fff;
+$gray-color: #bebebe;

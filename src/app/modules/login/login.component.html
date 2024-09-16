@@ -1,0 +1,19 @@
+<div class="login">
+  <mat-card class="login__form">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginForm">
+        <app-input-text label="E-mail" formControlName="email"></app-input-text>
+        <app-input-password label="Senha" formControlName="password"></app-input-password>
+      </form>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button color="link" routerLink="/register" type="button">Cadastrar</button>
+      <button mat-flat-button color="primary" (click)="login()" [disabled]="loginForm.invalid" type="submit">
+        Entrar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

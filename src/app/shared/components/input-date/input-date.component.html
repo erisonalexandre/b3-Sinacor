@@ -1,0 +1,26 @@
+<mat-form-field class="input" [appearance]="appearance" (click)="touched = true">
+  <mat-label *ngIf="label">{{ label }}</mat-label>
+  <input
+    matInput
+    [matDatepicker]="picker"
+    [formControl]="inputFormControl"
+    [required]="!!required"
+    [formControl]="inputFormControl"
+    (click)="handleClick($event); onTouched()"
+    [errorStateMatcher]="matcher"
+    [placeholder]="placeholder"
+    (paste)="onPaste($event)"
+    (drop)="onDrop($event)"
+    (keydown.enter)="handleKeyEnter($event)"
+    [max]="max"
+  />
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error>
+    <app-errors-label
+      [label]="label"
+      *ngIf="touched && ngControl.errors"
+      [errors]="ngControl.errors"
+    ></app-errors-label>
+  </mat-error>
+</mat-form-field>

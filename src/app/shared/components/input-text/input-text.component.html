@@ -1,0 +1,29 @@
+<mat-form-field class="input" [appearance]="appearance" (click)="touched = true" [class.suffix-click]="hasSuffixClick">
+  <mat-label class="mb-xs" *ngIf="label">{{ label }}</mat-label>
+  <input
+    matInput
+    type="text"
+    #input
+    [disabled]="disabled"
+    [required]="!!required"
+    [ngModel]="value"
+    (ngModelChange)="changeModel($event)"
+    (change)="onChange(value)"
+    (click)="handleClick($event); onTouched()"
+    [errorStateMatcher]="matcher"
+    [placeholder]="placeholder"
+    (paste)="onPaste($event)"
+    (drop)="onDrop($event)"
+    (keydown.enter)="handleKeyEnter($event)"
+    [maxlength]="maxlength || ''"
+    [mask]="_mask"
+  />
+  <mat-icon *ngIf="suffix" matSuffix (click)="suffixClick.emit($event)">{{ suffix }}</mat-icon>
+  <mat-error>
+    <app-errors-label
+      [label]="label"
+      *ngIf="touched && ngControl.errors"
+      [errors]="ngControl.errors"
+    ></app-errors-label>
+  </mat-error>
+</mat-form-field>

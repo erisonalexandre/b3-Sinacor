@@ -1,0 +1,30 @@
+<mat-toolbar class="header" color="primary">
+  <h1>Fluxo de Caixa</h1>
+  <div class="header__user-info">
+    <span class="header__username">{{ username }}</span>
+    <div class="header__currency-button" (click)="toggleCurrency()" *ngIf="currencyCode$ | async as currency">
+      <img [src]="'assets/images/flags/' + currency + '.svg'" alt="Currency" />
+    </div>
+    <button mat-flat-button (click)="logout()">Logout</button>
+  </div>
+</mat-toolbar>
+<mat-toolbar class="header-mobile" color="primary">
+  <h1>Fluxo de Caixa</h1>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="toggleCurrency()">
+      <div class="header-mobile__currency-button">
+        <div>
+          <img [src]="'assets/images/flags/' + (currencyCode$ | async) + '.svg'" alt="Currency" />
+        </div>
+        <span>Alterar Moeda</span>
+      </div>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Sair</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

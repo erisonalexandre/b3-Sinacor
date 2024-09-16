@@ -1,0 +1,36 @@
+@import 'variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 116px);
+  max-height: calc(100vh - 116px);
+  overflow: auto;
+  align-items: center;
+
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+.content {
+  width: 100%;
+}
+
+@include respond-to('tablet') {
+  .content {
+    width: 672px;
+  }
+}
+
+@include respond-to('desktop') {
+  .content {
+    width: 960px;
+  }
+}
+
+@include respond-to('large-desktop') {
+  .content {
+    width: 1140px;
+  }
+}

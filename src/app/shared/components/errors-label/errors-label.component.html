@@ -1,0 +1,11 @@
+<mat-error *ngIf="errors['minlength']">
+  Tamanho mínimo de {{ errors['minlength'].requiredLength }} caracteres
+</mat-error>
+<mat-error *ngIf="errors['maxlength']"> Tamanho máximo {{ errors['maxlength'].requiredLength }}</mat-error>
+<mat-error *ngIf="errors['mustMatchEmail']">Os e-mails não coincidem</mat-error>
+<mat-error *ngIf="errors['mustMatchPassword']">As senhas não coincidem</mat-error>
+<mat-error *ngIf="errors['moreThanOneWord']">Nome incompleto</mat-error>
+<mat-error *ngIf="errors['email']">E-mail inválido</mat-error>
+<mat-error *ngIf="errors['cpfInvalid']">CPF inválido</mat-error>
+<mat-error *ngIf="errors['dateInvalid']">Data inválida</mat-error>
+<mat-error *ngIf="errors['required']">Campo obrigatório</mat-error>

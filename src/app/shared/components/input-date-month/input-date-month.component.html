@@ -1,0 +1,18 @@
+<button mat-icon-button (click)="mesAnterior()">
+  <mat-icon>navigate_before</mat-icon>
+</button>
+
+<button mat-button (click)="datePicker.open()">
+  {{ inputFormControl.value | date: 'MMMM/yyyy' }}
+</button>
+<input matInput [matDatepicker]="datePicker" [formControl]="inputFormControl" (dateChange)="alterarData($event)" />
+<mat-datepicker
+  #datePicker
+  startView="multi-year"
+  (monthSelected)="setMes($event, datePicker)"
+  panelClass="month-picker"
+></mat-datepicker>
+
+<button mat-icon-button (click)="mesProximo()">
+  <mat-icon>navigate_next</mat-icon>
+</button>

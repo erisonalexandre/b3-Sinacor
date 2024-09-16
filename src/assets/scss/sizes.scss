@@ -1,0 +1,164 @@
+$xs-base: 0.5rem; //8px
+$sm-base: 1rem; //16px
+$md-base: 1.5rem; //24px
+$lg-base: 2rem; //32px
+
+.m-xs {
+  margin: $xs-base !important;
+}
+
+.mb-xs {
+  margin-bottom: $xs-base !important;
+}
+
+.mt-xs {
+  margin-top: $xs-base !important;
+}
+
+.ml-xs {
+  margin-left: $xs-base !important;
+}
+
+.mr-xs {
+  margin-right: $xs-base !important;
+}
+
+.m-sm {
+  margin: $sm-base !important;
+}
+
+.mb-sm {
+  margin-bottom: $sm-base !important;
+}
+
+.mt-sm {
+  margin-top: $sm-base !important;
+}
+
+.ml-sm {
+  margin-left: $sm-base !important;
+}
+
+.mr-sm {
+  margin-right: $sm-base !important;
+}
+
+.m-md {
+  margin: $md-base !important;
+}
+
+.mb-md {
+  margin-bottom: $md-base !important;
+}
+
+.mt-md {
+  margin-top: $md-base !important;
+}
+
+.ml-md {
+  margin-left: $md-base !important;
+}
+
+.mr-md {
+  margin-right: $md-base !important;
+}
+
+.m-lg {
+  margin: $lg-base !important;
+}
+
+.mt-lg {
+  margin-top: $lg-base !important;
+}
+
+.mb-lg {
+  margin-bottom: $lg-base !important;
+}
+
+.ml-lg {
+  margin-left: $lg-base !important;
+}
+
+.mr-lg {
+  margin-right: $lg-base !important;
+}
+
+.p-xs {
+  padding: $xs-base !important;
+}
+
+.pb-xs {
+  padding-bottom: $xs-base !important;
+}
+
+.pt-xs {
+  padding-top: $xs-base !important;
+}
+
+.pl-xs {
+  padding-left: $xs-base !important;
+}
+
+.pr-xs {
+  padding-right: $xs-base !important;
+}
+
+.p-sm {
+  padding: $sm-base !important;
+}
+
+.pb-sm {
+  padding-bottom: $sm-base !important;
+}
+
+.pt-sm {
+  padding-top: $sm-base !important;
+}
+
+.pl-sm {
+  padding-left: $sm-base !important;
+}
+
+.pr-sm {
+  padding-right: $sm-base !important;
+}
+
+.p-md {
+  padding: $md-base !important;
+}
+
+.pb-md {
+  padding-bottom: $md-base !important;
+}
+
+.pt-md {
+  padding-top: $md-base !important;
+}
+
+.pl-md {
+  padding-left: $md-base !important;
+}
+
+.pr-md {
+  padding-right: $md-base !important;
+}
+
+.p-lg {
+  padding: $lg-base !important;
+}
+
+.pt-lg {
+  padding-top: $lg-base !important;
+}
+
+.pb-lg {
+  padding-bottom: $lg-base !important;
+}
+
+.pl-lg {
+  padding-left: $lg-base !important;
+}
+
+.pr-lg {
+  padding-right: $lg-base !important;
+}

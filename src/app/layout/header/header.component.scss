@@ -1,0 +1,78 @@
+@import 'variables';
+
+.header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: 64px;
+
+  @include respond-to('tablet') {
+    display: flex;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__username {
+    margin-right: 1rem;
+  }
+
+  &__currency-button {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 1rem;
+    overflow: hidden;
+
+    // full circle
+    img {
+      height: 50px;
+      width: 50px;
+    }
+  }
+}
+
+.header-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: 64px;
+
+  @include respond-to('tablet') {
+    display: none;
+  }
+
+  &__currency-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    & > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      overflow: hidden;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

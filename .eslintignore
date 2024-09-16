@@ -1,0 +1,9 @@
+package.json
+package-lock.json
+dist
+node_modules
+e2e/**
+karm.conf.js
+commitlint.config.js
+src/environments/*
+tsconfig.json

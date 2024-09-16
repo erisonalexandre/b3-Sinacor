@@ -1,0 +1,53 @@
+<div class="fluxo-caixa-lista__filtros">
+  <app-input-date-month [formControl]="dataFiltro"></app-input-date-month>
+
+  <button mat-raised-button color="primary" (click)="cadastrar()">
+    Cadastrar
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div class="fluxo-caixa-lista__lista mat-elevation-z8">
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="data">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Data</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.data | date: 'dd/MM/yyyy HH:mm' }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Descrição</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.descricao }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="valorEntrada">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Valor de Entrada</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.tipo === tipoTransacaoFluxoCaixaEnum.ENTRADA ? (element.valor | currencyConverter) : '-' }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="valorSaida">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Valor de Saída </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.tipo === tipoTransacaoFluxoCaixaEnum.SAIDA ? (element.valor | currencyConverter) : '-' }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="acao">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="editar(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="excluir(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

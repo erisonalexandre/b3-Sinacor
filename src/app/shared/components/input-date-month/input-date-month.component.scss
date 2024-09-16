@@ -1,0 +1,9 @@
+:host {
+  position: relative;
+  input {
+    visibility: hidden;
+    width: 0px;
+    position: absolute;
+    left: 50px;
+  }
+}

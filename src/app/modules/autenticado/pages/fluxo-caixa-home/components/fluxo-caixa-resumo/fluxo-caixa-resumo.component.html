@@ -1,0 +1,20 @@
+<div class="fluxo-caixa-resumo" *ngIf="resumoFluxoCaixa$ | async as resumoFluxoCaixa">
+  <div class="fluxo-caixa-resumo__item">
+    <span class="fluxo-caixa-resumo__titulo">Entradas</span>
+    <span class="fluxo-caixa-resumo__valor">
+      {{ resumoFluxoCaixa.totalEntrada | currencyConverter }}
+    </span>
+  </div>
+  <div class="fluxo-caixa-resumo__item">
+    <span class="fluxo-caixa-resumo__titulo">Saídas</span>
+    <span class="fluxo-caixa-resumo__valor">
+      {{ resumoFluxoCaixa.totalSaida | currencyConverter }}
+    </span>
+  </div>
+  <div class="fluxo-caixa-resumo__item">
+    <span class="fluxo-caixa-resumo__titulo">Saldo</span>
+    <span class="fluxo-caixa-resumo__valor">
+      {{ resumoFluxoCaixa.saldo | currencyConverter }}
+    </span>
+  </div>
+</div>
